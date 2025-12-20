@@ -461,10 +461,14 @@ function LoginForm() {
   };
 
   return (
-    <div className="sign-in-step">
+    <div className="sign-in-step" style={{ 
+      width: '100%', 
+      maxWidth: '440px', 
+      margin: '0 auto' 
+    }}>
       <div className="sign-in-wrapper">
         <div className="sign-in-card">
-          {/* Логотип (показывается всегда) */}
+          {/* Логотип */}
           <div className="logo-title">
             <div className="logo-placeholder">
               <Logo />
@@ -482,9 +486,15 @@ function LoginForm() {
 function App() {
   return (
     <div className="auth-container">
-      <QueryClientProvider client={queryClient}>
-        <LoginForm />
-      </QueryClientProvider>
+      <div style={{
+        width: '100%',
+        maxWidth: '440px',
+        padding: '20px'
+      }}>
+        <QueryClientProvider client={queryClient}>
+          <LoginForm />
+        </QueryClientProvider>
+      </div>
     </div>
   );
 }
